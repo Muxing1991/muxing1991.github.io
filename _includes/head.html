@@ -1,43 +1,26 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
-    {% if page.crawlertitle %}
-      {{ page.crawlertitle | escape }}
-    {% elsif page.title %}
-      {{ page.title | escape }}
+    {% if page.title == "Home" %}
+      {{ site.title }} | {{ site.tagline }}
     {% else %}
-      {{ site.title | escape }}
+      {{ page.title }} | {{ site.title }}
     {% endif %}
   </title>
 
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="stylesheet" href="{{ site.github.url }}/css/main.css">
+  <link rel="stylesheet" href="{{ site.github.url }}/css/syntax.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-  <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|Roboto+Condensed:700&subset=latin' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
 
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{{ page.summary }}">
-  <meta property="og:site_name" content="{{ site.title }}">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-  <meta name="twitter:title" content="{{ page.title }}">
-  <meta name="twitter:description" content="{{ page.summary }}">
-
-  {% if page.bg %}
-    <meta property="og:image" content="{{ site.url }}{{ site.images }}/{{ page.bg }}">
-    <meta name="twitter:image" content="{{ site.url }}{{ site.images }}/{{ page.bg }}">
-  {% else %}
-    <meta property="og:image" content="{{ site.url }}{{ site.images }}/bg.svg">
-    <meta name="twitter:image" content="{{ site.url }}{{ site.images }}/bg.svg">
-  {% endif %}
+  {% include google_analytics.html %}
 
 </head>
