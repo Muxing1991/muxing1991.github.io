@@ -4,8 +4,8 @@ title: "Swift Code Guide (Raywenderlich)"
 categories: journal
 tags: [documentation,sample]
 image:
-  feature: wukong.jpg
-  teaser: wukong.jpg
+  feature: wukong1.jpg
+  teaser: wukong1.jpg
   credit: Death to Stock Photo
   creditlink: ""
 ---
