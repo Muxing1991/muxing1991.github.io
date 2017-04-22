@@ -66,14 +66,15 @@ creditlink: ""
 *	用Swift的原生类型 因为都桥接了 OC 而不要用OC的类型NS前缀的那些
 ### Constants 常量
 *	常量 就用一个类型常量 而不是实例常量 static let
-` enum Math {  static let e = 2.718281828459045235360287  static let root2 = 1.41421356237309504880168872}let hypotenuse = side * Math.root2`这种写法 没有case  使得避免被意外实例化 而且用这个enum就像是一个命名空间
+```enum Math {  static let e = 2.718281828459045235360287  static let root2 = 1.41421356237309504880168872}let hypotenuse = side * Math.root2```
+这种写法 没有case  使得避免被意外实例化 而且用这个enum就像是一个命名空间
 ### Optionals 可空类型
 *	命名不要有 "optional" "maybe" 等字眼 因为它们的类型就可以说明了 不要废话
 ### Lazy Initialization  延迟存储属性
 *	对于耗费大的对象 考虑用lazy修饰 
 *	这个属性的可以直接接一个闭包初始化 {} ()
 *	或者用一个私有工厂方法来初始化
-` lazy var locationManager: CLLocationManager = self.makeLocationManager()private func makeLocationManager() -> CLLocationManager {  let manager = CLLocationManager()  manager.desiredAccuracy = kCLLocationAccuracyBest  manager.delegate = self  manager.requestAlwaysAuthorization()  return manager}`
+```lazy var locationManager: CLLocationManager = self.makeLocationManager()private func makeLocationManager() -> CLLocationManager {  let manager = CLLocationManager()  manager.desiredAccuracy = kCLLocationAccuracyBest  manager.delegate = self  manager.requestAlwaysAuthorization()  return manager}```
 ### Type Inference 类型推断
 *	为了简洁 用类型推断 除非特殊需要 比如 CGRect Int16
 *	对于空的数组和字典 用类型注释 
@@ -99,7 +100,7 @@ creditlink: ""
 *	使用guard let  来排除坏的情况 可以多个return
 *	而不要使用 if 的嵌套 这样可读性不好
 *	如果有多个Optional要解包 使用连续的guard 复合在一起 这样美观 可读性好
-`	guard let number1 = number1,       let number2 = number2,       let number3 = number3 else {   fatalError("impossible") }`
+```guard let number1 = number1,       let number2 = number2,       let number3 = number3 else {   fatalError("impossible") }```
 *	在guard的else中要用简单的语句 比如return throw break continue， fatalError() 等 而不要有复杂的逻辑 如果要处理清理工作  在defer block 中处理 这样只有一次
 ### Semicolons 分号
 *	不要写分号
