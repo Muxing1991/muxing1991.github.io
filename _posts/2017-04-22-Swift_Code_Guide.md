@@ -1,14 +1,16 @@
 ---
 layout: post
-title: "Swift Code Guide (Raywenderlich)翻译"
+title: "Swift Code Guide (Raywenderlich)"
 categories: journal
 tags: [documentation,sample]
 image:
-feature: wukong.jpg
-teaser: wukong.jpg
-credit: Death to Stock Photo
-creditlink: ""
+  feature: wukong.jpg
+  teaser: wukong.jpg
+  credit: Death to Stock Photo
+  creditlink: ""
 ---
+
+
 ### Correctness 正确性
 * 多使用#selector
 ### Naming 命名
